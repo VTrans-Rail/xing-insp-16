@@ -95,6 +95,10 @@
   text-align: center;
 }
 
+.legalese-body {
+  text-align: center;
+}
+
 /* Apply
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .apply {
@@ -104,6 +108,11 @@
 
 .apply a {
   color: #FBB03B;
+}
+
+.apply .button {
+  background-color: white;
+  color: black;
 }
 
 /* Footer
