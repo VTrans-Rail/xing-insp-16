@@ -38,6 +38,7 @@
         $('html, body').animate({
           scrollTop: target.offset().top
         }, 1000);
+        ga('send', 'event', { eventCategory: 'Button', eventAction: 'Scroll', eventLabel: 'Join Our Team'});
         return false;
       }
     }
@@ -267,7 +268,7 @@
     <div class="row">
       <div class="one-third column">
         <ul>
-          <li> <a href="http://humanresources.vermont.gov/compensation/pay-charts" target="_blank">Pay Grade: 16</a></li>
+          <li> <a href="http://humanresources.vermont.gov/compensation/pay-charts" onclick="payGA" target="_blank">Pay Grade: 16</a></li>
           <li> Benefits: None </li>
           <li> Start date: ASAP</li>
         </ul>
@@ -298,12 +299,12 @@
         <h1>Ready to get started?</h1>
         <p>
           Follow the directions on this form.
-          <a href="DHR-SOV_Temporary_Application - Fillable (Tech IV).pdf" target="_blank">
+          <a href="DHR-SOV_Temporary_Application - Fillable (Tech IV).pdf" onclick='formGA' target="_blank">
             <h2>VTrans Temporary Application</h2>
           </a>
         </p>
         <h3>Then send a cover letter to:</h3>
-        <a href="mailto:stephen.smith@vermont.gov" class="button">Stephen Smith</a>
+        <a href="mailto:stephen.smith@vermont.gov" onclick="mailtoGA" class="button">Stephen Smith</a>
       </div>
     </div>
   </div>
@@ -337,7 +338,45 @@
 
   </div>
 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+    ga('create', 'UA-45708379-10', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+  <script>
+      function formGA() {
+        //Google Analytics
+        ga('send', 'event', {
+          eventCategory: 'Form',
+          eventAction: 'View PDF',
+          eventLabel: 'Click Tech App Form'
+        });
+      }
+
+      function mailtoGA() {
+        //Google Analytics
+        ga('send', 'event', {
+          eventCategory: 'Button',
+          eventAction: 'Email',
+          eventLabel: 'Send cover letter'
+        });
+      }
+
+      function payGA() {
+        //Google Analytics
+        ga('send', 'event', {
+          eventCategory: 'Link',
+          eventAction: 'Pay',
+          eventLabel: 'Pay chart'
+        });
+      }
+
+    </script>
 
 
   <!-- End Document
